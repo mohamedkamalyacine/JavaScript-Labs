@@ -10,25 +10,25 @@ var detailedUsers = [
     lastName: 'Mohamed',
     dateOfBirth: '1980-05-10',
     address: 'Nasr City, Cairo, Egypt'
-  },
-  {
+},
+{
     firstName: 'John',
     lastName: 'James',
     dateOfBirth: '1975-03-05',
     address: 'Nasr street, Nasr City, Cairo, Egypt'
-  },
-  {
+},
+{
     firstName: 'Tarek',
     lastName: 'Hassan',
     dateOfBirth: '1999-12-03',
     address: '15, street name, district, city, country'
-  },
-  {
+},
+{
     firstName: 'Hussein',
     lastName: 'Youssuf',
     dateOfBirth: '2005-12-03',
     address: 'abc, street name, district, city, country'
-  }
+    }
 ]
 
 function formattedUsers(array) {
@@ -109,4 +109,22 @@ function formattedUsers(array) {
     return obj;
 }
 var users = formattedUsers(detailedUsers);
-console.log(users[0].fullname);
+// console.log(users[0].fullname);
+
+var usersAge = [];
+var i=0;
+for (var index = 0; index < users.length; index++) {
+    if(users[index].age < 40)
+    {
+        usersAge[i] = users[index].age;
+        i++;
+    }
+}
+// console.log(usersAge);
+const initialValue = 0;
+const sumWithInitial = usersAge.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial/usersAge.length);
