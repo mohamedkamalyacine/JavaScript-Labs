@@ -12,10 +12,12 @@ function reducerFunc() {
 var average = formattedUsers.reduce(reducerFunc);
 
 /*
-  2. Calculate the number of occurrences of all characters including numbers and white 
-     spaces in a string. The string may contain: numbers, upper and lower-case letters and 
+  2. Calculate the number of occurrences of all characters including numbers
+     and white spaces in a string.
+     The string may contain: numbers, upper and lower-case letters and 
      white spaces. 
-     Ignore the character case, for example, 'aA' should be counted as 2 occurrences
+     Ignore the character case, for example, 
+     'aA' should be counted as 2 occurrences
      of the a character.
 */
 
