@@ -52,7 +52,7 @@ function formattedUsers(array) {
                     city: location[0],
                     country: location[1]
                 };
-                console.log(obj[i].fullname, obj[i].age, obj[i].city, obj[i].country);
+                // console.log(obj[i].fullname, obj[i].age, obj[i].city, obj[i].country);
                 break;
             
             case 3:
@@ -63,7 +63,7 @@ function formattedUsers(array) {
                     city: location[1],
                     country: location[2]
                 };
-                console.log(obj[i].fullname, obj[i].age, obj[i].district, obj[i].city, obj[i].country);
+                // console.log(obj[i].fullname, obj[i].age, obj[i].district, obj[i].city, obj[i].country);
                 break;
 
             case 4:
@@ -75,7 +75,7 @@ function formattedUsers(array) {
                     city: location[2],
                     country: location[3]
                 };
-                console.log(obj[i].fullname, obj[i].age, obj[i].street, obj[i].district, obj[i].city, obj[i].country);
+                // console.log(obj[i].fullname, obj[i].age, obj[i].street, obj[i].district, obj[i].city, obj[i].country);
                 break;
 
             case 5:
@@ -92,12 +92,14 @@ function formattedUsers(array) {
                         city: location[3],
                         country: location[4]
                     };
-                    console.log(obj[i].fullname, obj[i].age, obj[i].buildingNum, obj[i].street, obj[i].district, obj[i].city, obj[i].country);   
+                    // console.log(obj[i].fullname, obj[i].age, obj[i].buildingNum, obj[i].street, obj[i].district, obj[i].city, obj[i].country);   
                 }
                 break;
             default:
                 break;
         }
     }
+    return obj;
 }
-formattedUsers(detailedUsers);
+var users = formattedUsers(detailedUsers);
+console.log(users[0].fullname);
