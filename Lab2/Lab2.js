@@ -109,7 +109,6 @@ function formattedUsers(array) {
     return obj;
 }
 var users = formattedUsers(detailedUsers);
-// console.log(users[0].fullname);
 
 var usersAge = [];
 var i=0;
@@ -121,10 +120,18 @@ for (var index = 0; index < users.length; index++) {
     }
 }
 // console.log(usersAge);
-const initialValue = 0;
+/*const initialValue = 0;
 const sumWithInitial = usersAge.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
   initialValue
 );
 
-console.log(sumWithInitial/usersAge.length);
+console.log(sumWithInitial/usersAge.length);*/
+
+function reducerFunc(sum,current) {
+    sum = sum + current
+    return sum;
+}
+
+var average = usersAge.reduce(reducerFunc,0)/usersAge.length;
+console.log(average)

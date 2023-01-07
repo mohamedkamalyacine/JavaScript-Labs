@@ -109,4 +109,4 @@ function formattedUsers(array) {
     return obj;
 }
 var users = formattedUsers(detailedUsers);
-console.log(users[0].fullname);
+// console.log(users[0].fullname);
