@@ -17,17 +17,13 @@
 
 [1, 2, 3].sum() // Output: 6
 */
-function doSmth()
-{
+function doSmth() {
     let sumElements = 0;
-    for (let i = 0; i < this.length; i++)
-    {
-        if (typeof(this[i]) != 'number')
-        {
+    for (let i = 0; i < this.length; i++) {
+        if (typeof (this[i]) != 'number') {
             return 'Target array must contain numbers only';
         }
-        else
-        {
+        else {
             sumElements += this[i];
         }
     }
@@ -35,7 +31,7 @@ function doSmth()
 }
 
 Array.prototype.sum = doSmth;
-[1,2,3].sum();
+[1, 2, 3].sum();
 
 
 /*
@@ -46,8 +42,7 @@ const obj = {};
 String(obj); // Output: 'This is an object'.
 */
 
-function modifyObjectMessage()
-{
+function modifyObjectMessage() {
     return 'This is an object.'
 }
 Object.prototype.toString = modifyObjectMessage;
@@ -65,10 +60,8 @@ const sampleObject = {
     message: 'This is message'
 };
 
-function displayObjectMessage()
-{
-    if(this.message)
-    {
+function displayObjectMessage() {
+    if (this.message) {
         return this.message;
     }
     return 'This an object.';
@@ -95,7 +88,9 @@ String(sampleObject);
   isBird(animal) // Output: true or false.
 */
 
-let val = 0;
+
+/* ==========================Using ES5=================================== */
+/*let val = 0;
 function counter()
 {
     val++;
@@ -111,4 +106,50 @@ function Animal(color, weight)
 Animal.prototype.walk = () => console.log('I can walk');
 Animal.prototype.run = () => console.log('I can reun');
 Animal.prototype.attack = () => console.log('I can attack');
-Animal.prototype.countInstance = counter();
+Animal.prototype.countInstance = counter();*/
+
+/* ==========================Using ES6=================================== */
+class Animal {
+    constructor(color, weight) {
+        this.color = color;
+        this.weight = weight;
+        if (Animal.count >= 100) {
+            throw new Error('Not Allowed');
+        } else {
+            Animal.count++;
+        }
+    }
+
+    walk() {
+        console.log('I can walk');
+    }
+    run() {
+        console.log('I can reun');
+    }
+    eat() {
+        console.log('I can eat');
+    }
+    attack() {
+        console.log('I can attack');
+    }
+
+    static count = 0;
+}
+
+class Bird extends Animal {
+
+    constructor(color, weight) {
+
+        super(color, weight);
+        this.flying = true;
+    }
+
+    fly() { }
+}
+
+function isBird(animal) {
+    return animal instanceof Bird;
+}
+
+let dog = new Animal('gray', '8 kg');
+console.log(dog);
